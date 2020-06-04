@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>申请成功</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="./static/css/base.css" rel="stylesheet">
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="applyok_img"><img src="./static/images/applyok.png" alt="申请成功"></div>
+	<div class="applyok_tex">申请成功，会有相关工作人员和您联系</div>
+	<div class="applyok_btn">返回首页</div>
+	<style type="text/css" media="screen">
+		.applyok_img{
+			width: 100%;
+			padding:  1.15rem 3.25rem 0.69rem 3.25rem;
+		}
+		.applyok_tex{
+			width: 100%;
+			font-size:0.28rem;
+			font-family:PingFang SC;
+			color:rgba(153,153,153,1);
+			text-align: center;
+		}
+		.applyok_btn{
+			width:2.70rem;
+			height:0.88rem;
+			margin : 1.24rem auto;
+			color:rgba(255,255,255,1);
+			background:rgba(61,125,255,1);
+			border-radius:0.44rem;
+			text-align: center;
+			line-height: 0.88rem;
+		}
+	</style>
+	<script type="text/javascript" charset="utf-8" async defer>
+		$(".applyok_btn").on("click",function(){
+			alert("返回首页")
+			// window.location.href = './registered.html';
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2020-04-15 11:39:11
+ * @version $Id$
+ */
+/*登录*/
+.logo_logo {
+    width: 100%;
+    height: 2.16rem;
+    padding: .42rem 1.79rem;
+    /*border: 0.01rem solid red;*/
+}
+
+.logo_logo img {
+    display: inline-block;
+    width: 3.99rem;
+    height: 1.36rem;
+}
+
+.logo_input {
+    width: 100%;
+    height: 3.06rem;
+    padding: 0 0.95rem 0.1rem 0.95rem;
+}
+
+.logo_input input {
+    width: 5.6rem;
+    height: 0.88rem;
+    background: rgba(255, 255, 255, 1);
+    border: 0.01rem solid rgba(180, 180, 180, 1);
+    border-radius: 0.1rem;
+    margin-bottom: 0.6rem;
+    padding-left: 0.2rem;
+    font-size: 0.28rem;
+    color: rgba(153, 153, 153, 1);
+    /*去除选中状态边框*/
+    outline: none;
+    /*透明背景*/
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.logo_btn {
+    width: 100%;
+    padding: 0 0.95rem;
+}
+
+.logo_btn .login {
+    width: 5.6rem;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    background: rgba(61, 125, 255, 1);
+    border: 0.01rem solid rgba(180, 180, 180, 1);
+    border-radius: 0.1rem;
+    font-size: 0.32rem;
+    color: rgba(255, 255, 255, 1);
+}
+
+.logo_btn .comment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.28rem;
+    color: rgba(51, 51, 51, 1);
+    padding-top: 0.36rem;
+}

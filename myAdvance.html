@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>我的预收益</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+    <link href="./static/css/base.css" rel="stylesheet" charset="utf-8">
+</head>
+
+<body>
+    <section class="top"></section>
+    <section class="main">
+    </section>
+    <script type="text/javascript" charset="utf-8" async defer>
+    (function() {
+        var frame = function() {
+            var pane = $.extend(true, {}, Pane)
+            var api = $.extend(true, {}, API)
+            var model = $.extend(true, {}, Model)
+            pane.api = api
+            pane.model = model
+            pane.init()
+        }
+        var Pane = {
+            init() {
+                this.domflag = false;
+                this.initbody();
+                this.bindEvents();
+            },
+            initbody() {
+                // let data = this.api.getList();
+                let that = this;
+                let dom = `<div class="myAdvance">
+					            <p class="myAdvance_txt">预计收益金额：¥300</p>
+					            <p class="myAdvance_date">预计收益时间：2020-02-06 12:00</p>
+					        </div>
+					        <div class="myAdvance">
+					            <p class="myAdvance_txt">预计收益金额：¥300</p>
+					            <p class="myAdvance_date">预计收益时间：2020-02-06 12:00</p>
+					        </div>`
+                $(".main").empty();
+                $(".main").append(dom);
+            },
+            bindEvents() {
+                $(".main").on('click', '.myAdvance', ({ currentTarget, target }) => {
+                    console.log(currentTarget);
+                    console.log(target);
+                    console.log($(currentTarget).index())
+                })
+            }
+
+        };
+        var API = {
+            getList() {
+
+            }
+        };
+        var Model = {
+            data: [],
+
+        };
+        return frame();
+    }())
+    </script>
+    <style type="text/css" media="screen">
+    .top {
+        width: 100%;
+        height: 0.2rem;
+        background: rgba(250, 250, 252, 1);
+    }
+
+    .main {
+        width: 100%;
+        height: auto;
+        padding-left: 0.2rem;
+    }
+
+    .myAdvance {
+        width: 100%;
+        height: 1.8rem;
+        border-bottom: 0.01rem solid #E5E5E5;
+    }
+
+    .myAdvance_txt {
+        width: 100%;
+        padding-top: 0.46rem;
+        line-height: 0.32rem;
+        font-size: 0.32rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .myAdvance_date {
+        width: 100%;
+        height: 0.28rem;
+        margin-top: 0.32rem;
+        line-height: 0.28rem;
+        font-size: 0.28rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(153, 153, 153, 1);
+    }
+    </style>
+</body>
+
+</html>

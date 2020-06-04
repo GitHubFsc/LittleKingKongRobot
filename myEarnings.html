@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>我的收益</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="./static/css/base.css" rel="stylesheet">
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <section class="top"></section>
+    <section class="Balance">
+        <div class="Balance_money">￥300</div>
+        <div class="Balance_txt">我的余额</div>
+        <div class="Balance_gain">
+            <span>全部到账收益：¥1500</span>|
+            <span>预收益：¥1500 </span>
+            <img src="./static/images/rightW.png" alt="">
+        </div>
+    </section>
+    <section class="withdraw_btn">提现</section>
+    <section class="record">
+        <div class="record_Details">
+            我的收益明细
+        </div>
+        <div class="hr"></div>
+        <div class="note"></div>
+    </section>
+    <script type="text/javascript" charset="utf-8" async defer>
+    (function() {
+        var frame = function() {
+            var pane = $.extend(true, {}, Pane)
+            var api = $.extend(true, {}, API)
+            var model = $.extend(true, {}, Model)
+            pane.api = api
+            pane.model = model
+            pane.init()
+        }
+        var Pane = {
+            init() {
+                this.domflag = false;
+                this.initbody();
+                this.bindEvents();
+            },
+            initbody() {
+                // let data = this.api.getList();
+                let that = this;
+                let dom = ` <div class="notes">
+                                    <p class="notes_txt">收益到账</p>
+                                    <p class="notes_date">2020-04-06 12:00</p>
+                                    <div class="notes_right">+¥800</div>
+                                </div>
+                                <div class="notes">
+                                    <p class="notes_txt">提现</p>
+                                    <p class="notes_date">2020-04-06 12:00</p>
+                                    <div class="notes_right">-¥800</div>
+                                </div>`
+                $(".note").empty();
+                $(".note").append(dom);
+            },
+            bindEvents() {
+                $(".Balance").on('click', '.Balance_gain img', ({ currentTarget, target }) => {
+                    window.location.href = './myAdvance.html';
+                })
+            }
+        };
+        var API = {
+            getList() {
+
+            }
+        };
+        var Model = {
+            data: [],
+
+        };
+        return frame();
+    }())
+    </script>
+    <style type="text/css" media="screen">
+    .top {
+        width: 100%;
+        height: 0.2rem;
+    }
+
+    .Balance {
+        width: 7.1rem;
+        height: 3.6rem;
+        margin: auto;
+        background: url(./static/images/card.png) no-repeat;
+        background-size: 100%;
+        padding-top: 1rem;
+        position: relative;
+    }
+
+    .Balance_money {
+        width: 100%;
+        text-align: center;
+        font-size: 0.6rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .Balance_txt {
+        width: 100%;
+        margin-top: 0.12rem;
+        text-align: center;
+        font-size: 0.24rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .Balance_gain {
+        width: 100%;
+        height: 0.8rem;
+        line-height: 0.8rem;
+        position: absolute;
+        top: 2.8rem;
+        left: 0;
+        font-size: 0.28rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .Balance_gain span:nth-child(1) {
+        width: 2.73rem;
+        margin: 0 0.42rem;
+    }
+
+    .Balance_gain span:nth-child(2) {
+        width: 1.89rem;
+        margin: 0 0.45rem;
+    }
+
+    .Balance_gain img {
+        display: inline-block;
+        width: 0.16rem;
+        height: 0.3rem;
+        position: absolute;
+        top: 0.23rem;
+        left: 6.63rem;
+    }
+
+    .record .hr {
+        width: 100%;
+        height: 0.01rem;
+        background-color: #E5E5E5;
+        margin-top: 0.42rem;
+    }
+
+    .record {
+        width: 100%;
+        height: auto;
+        padding: 0.2rem;
+    }
+
+    .record_Details {
+        width: 7.1rem;
+        height: 0.32rem;
+        padding-left: 0.11rem;
+        line-height: 0.32rem;
+        font-size: 0.32rem;
+        font-family: PingFang SC;
+        font-weight: 600;
+        color: rgba(51, 51, 51, 1);
+        border-left: 0.1rem solid rgba(61, 125, 255, 1);
+    }
+
+    .notes {
+        width: 100%;
+        height: 1.6rem;
+        border-bottom: 0.01rem solid #E5E5E5;
+        position: relative;
+    }
+
+    .notes_txt {
+        width: 100%;
+        padding-top: 0.43rem;
+        font-size: 0.3rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .notes_date {
+        width: 100%;
+        margin-top: 0.26rem;
+        font-size: 0.26rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(153, 153, 153, 1);
+    }
+
+    .notes_right {
+        width: 1rem;
+        height: 0.23rem;
+        line-height: 0.23rem;
+        font-size: 0.30rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(255, 167, 13, 1);
+        position: absolute;
+        top: 0.59rem;
+        left: 6.02rem;
+    }
+
+    .withdraw_btn {
+        width: 7.1rem;
+        height: 1rem;
+        margin: 0.3rem auto;
+        font-size: 0.32rem;
+        color: rgba(255, 255, 255, 1);
+        background: rgba(61, 125, 255, 1);
+        border-radius: 0.1rem;
+        text-align: center;
+        line-height: 1rem;
+    }
+    </style>
+</body>
+
+</html>

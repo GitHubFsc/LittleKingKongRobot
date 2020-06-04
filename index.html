@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>小金刚康养机器人</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="./static/css/base.css" rel="stylesheet">
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <section class="main">
+        <div class="content"></div>
+    </section>
+    <script type="text/javascript" charset="utf-8" async defer>
+    (function() {
+        var frame = function() {
+            var pane = $.extend(true, {}, Pane)
+            var api = $.extend(true, {}, API)
+            var model = $.extend(true, {}, Model)
+            pane.api = api
+            pane.model = model
+            pane.init()
+        }
+        var Pane = {
+            init() {
+                this.domflag = false;
+                this.initbody();
+                this.bindEvents();
+            },
+            initbody() {
+                // let data = this.api.getList();
+                let that = this;
+                let dom = `<div class="robot">
+                                <div class="robot_img"><img src="./static/images/machine.png" alt=""></div>
+                                <div class="robot_introduction">
+                                    <p class="robot_promote">铺机推广</p>
+                                    <p class="robot_price">¥4880</p>
+                                    <p class="robot_rent">租金：¥988/月</p>
+                                </div>
+                            </div>
+                            <div class="robot">
+                                <div class="robot_img"><img src="./static/images/commercial.png" alt=""></div>
+                                <div class="robot_introduction">
+                                    <p class="robot_promote">商用版租赁推广</p>
+                                    <p class="robot_price">¥9880</p>
+                                    <p class="robot_rent">租金：¥888/月</p>
+                                </div>
+                            </div>
+                            <div class="robot">
+                                <div class="robot_img"><img src="./static/images/homeUse.png" alt=""></div>
+                                <div class="robot_introduction">
+                                    <p class="robot_promote">家用版推广</p>
+                                    <p class="robot_price">¥19880</p>
+                                    <p class="robot_rent">租金：¥ 0 /月</p>
+                                </div>
+                            </div>`
+                $(".content").empty();
+                $(".content").append(dom);
+            },
+            bindEvents() {
+                //输入框查询
+                $(".content").on('click', '.robot', ({ currentTarget, target }) => {
+                    console.log($(currentTarget).find(".robot_promote").text());
+                    console.log($(currentTarget).find(".robot_price").text());
+                    console.log($(currentTarget).find(".robot_rent").text());
+                    console.log($(currentTarget).index());
+                    window.location.href = "./robotPromotion.html"
+                })
+            }
+
+        };
+        var API = {
+            getList() {
+
+            }
+        };
+        var Model = {
+
+        };
+        return frame();
+    })()
+    </script>
+    <style type="text/css" media="screen">
+    .main {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+        background: url(./static/images/index.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        padding: 3.7rem 0.4rem 0 0.4rem;
+    }
+
+    .robot {
+        width: 6.7rem;
+        height: 2.4rem;
+        background-color: #ffffff;
+        padding: 0.2rem;
+        margin-bottom: 0.35rem;
+        border-radius: 0.1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .robot_img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .robot_introduction {
+        width: 4.1rem;
+        padding: 0.2rem;
+    }
+
+    .robot_promote {
+        font-size: 0.32rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .robot_price {
+        font-size: 0.3rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(255, 167, 13, 1);
+        margin-top: 0.2rem;
+        margin-bottom: 0.28rem;
+    }
+
+    .robot_rent {
+        font-size: 0.3rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .promote {
+        width: 100%;
+        height: auto;
+        padding: 0.2rem 0.3rem;
+        background-color: rgba(250, 250, 252, 1);
+    }
+
+    .service {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        padding: 0.46rem 0.2rem;
+    }
+
+    .service div,
+    .income div {
+        font-size: 0.32rem;
+        font-family: PingFang SC;
+        font-weight: 500;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .service p {
+        margin-top: 0.34rem;
+        font-size: 0.28rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .income {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        padding: 0.35rem 0.2rem;
+    }
+
+    .income section {
+        width: 100%;
+        height: auto;
+        margin-top: 0.42rem;
+        position: relative;
+    }
+
+    .income section span {
+        position: absolute;
+        top: 0.15rem;
+        display: inline-block;
+        width: 0.16rem;
+        height: 0.16rem;
+        border-radius: 50%;
+        background-color: #2E72F1;
+    }
+
+    .income section p {
+        margin-left: 0.36rem;
+        font-size: 0.28rem;
+        font-family: PingFang SC;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+    }
+    </style>
+</body>
+
+</html>

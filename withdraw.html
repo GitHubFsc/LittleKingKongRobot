@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>提现</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="./static/css/base.css" rel="stylesheet">
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="withdraw"></div>
+    <style type="text/css" media="screen">
+    body {
+        background-color: rgba(250, 250, 252, 1);
+    }
+
+    .totalMoney {
+        width: 100%;
+        height: 1.82rem;
+        text-align: center;
+        padding: 0.82rem 3.14rem 0.55rem 3.14rem;
+        font-size: 0.6rem;
+        color: #333333;
+    }
+
+    .totalMoney span {
+        font-size: 0.26rem;
+    }
+
+    .withdraw_input {
+        width: 5.7rem;
+        height: 3rem;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    .withdraw_to {
+        width: 100%;
+        font-size: 0.26rem;
+        color: #333333;
+        text-align: center;
+        padding: 0.58rem;
+    }
+
+    .withdraw_Amount {
+        width: 100%;
+        height: 0.88rem;
+        font-size: 0.34rem;
+        position: relative;
+    }
+
+    .withdraw_Amount span {
+        font-weight: 500;
+        position: absolute;
+        top: 25%;
+        left: 2%;
+    }
+
+    .withdraw_Amount input {
+        height: 100%;
+        color: rgba(195, 195, 195, 1);
+        position: absolute;
+        top: 0;
+        left: 10%;
+    }
+
+    .withdraw_Amount div {
+        width: 0.8rem;
+        height: 0.48rem;
+        color: rgba(61, 125, 255, 1);
+        text-align: center;
+        background-color: rgba(255, 255, 255, 1);
+        border: 0.01rem solid rgba(61, 125, 255, 1);
+        border-radius: 0.1rem;
+        position: absolute;
+        top: 21%;
+        right: 2%;
+    }
+
+    .withdraw_prompt_bef {
+        width: 100%;
+        font-size: 0.24rem;
+        margin-top: 0.32rem;
+        color: rgba(153, 153, 153, 1);
+        text-align: center;
+    }
+
+    .withdraw_btn_bef {
+        width: 5.7rem;
+        height: 0.88rem;
+        margin: 0.73rem auto;
+        color: rgba(255, 255, 255, 1);
+        background: rgba(61, 125, 255, 1);
+        border-radius: 0.44rem;
+        text-align: center;
+        line-height: 0.88rem;
+    }
+
+
+
+
+    .withdraw_img {
+        width: 100%;
+        padding: 1.14rem 3.22rem 0.31rem 3.22rem;
+    }
+
+    .withdraw_tex {
+        width: 100%;
+        font-size: 0.3rem;
+        text-align: center;
+        color: rgba(51, 51, 51, 1);
+    }
+
+    .withdraw_prompt_aft {
+        width: 100%;
+        font-size: 0.28rem;
+        margin-top: 0.42rem;
+        color: rgba(153, 153, 153, 1);
+        text-align: center;
+    }
+
+    .withdraw_btn_aft {
+        width: 2.70rem;
+        height: 0.88rem;
+        margin: 0.86rem auto;
+        color: rgba(255, 255, 255, 1);
+        background: rgba(61, 125, 255, 1);
+        border-radius: 0.44rem;
+        text-align: center;
+        line-height: 0.88rem;
+    }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+    (function() {
+        var frame = function() {
+            var pane = $.extend(true, {}, Pane)
+            var api = $.extend(true, {}, API)
+            var model = $.extend(true, {}, Model)
+            pane.api = api
+            pane.model = model
+            pane.init()
+        }
+        var Pane = {
+            init() {
+                this.domflag = false;
+                this.initbody();
+                this.bindEvents();
+            },
+            initbody() {
+                // let data = this.api.getList();
+                let that = this;
+                let dom_bef = `<div class="totalMoney"><span>￥</span>300</div>
+						        <div class="withdraw_input">
+						            <p class="withdraw_to">提现到微信钱包</p>
+						            <div class="withdraw_Amount">
+						                <span>￥</span>
+						                <input type="text" name="text" placeholder="最低1元起提">
+						                <div class="all">全部</div>
+						            </div>
+						        </div>
+						        <div class="withdraw_prompt_bef">·预计2个工作日到账</div>
+						        <div class="withdraw_btn_bef confirm" style="width: 5.7rem;">提现</div>`
+                $(".withdraw").empty();
+                $(".withdraw").append(dom_bef);
+            },
+            bindEvents() {
+                //输入框查询
+                $(".withdraw").on('click', '.confirm', ({ currentTarget, target }) => {
+                    if (currentTarget == target) {
+                        let that = this;
+                        if (that.domflag) {
+                            alert("返回首页")
+                        } else {
+                        	that.domflag = true;
+                            let dom_aft = `<div class="withdraw_img"><img src="./static/images/qian.png" alt="申请成功"></div>
+					        <div class="withdraw_tex">提现成功</div>
+					        <div class="withdraw_prompt_aft">预计1个工作日到账</div>
+					        <div class="withdraw_btn_aft confirm">返回首页</div>`
+                            $(".withdraw").empty();
+                            $(".withdraw").append(dom_aft);
+                        }
+                    }
+                })
+                .on('click', '.all', ({ currentTarget, target }) => {
+                    if (currentTarget == target) {
+                    	
+                    }
+                })
+            }
+
+        };
+        var API = {
+            getList() {
+
+            }
+        };
+        var Model = {
+
+        };
+        return frame();
+    })()
+    </script>
+</body>
+
+</html>
