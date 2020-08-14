@@ -13,21 +13,17 @@
 <body>
     <section class="content">
         <section class="top">
+            <div class="QRcode"></div>
             <div class="label">临时合伙人</div>
             <div class="user">
                 <div class="user_img"><img src="static/images/myTeam.png" alt=""></div>
                 <p class="user_name">刘小牛 <span>开</span></p>
-                <p class="user_date">有效期：2020-04-06 12:00</p>
-            </div>
-            <div class="btn">
-                <div>关闭铺机</div>
-                <div>续费</div>
             </div>
             <ul class="routing">
                 <li><img src="static/images/tuandui.png" alt="">我的团队</li>
                 <li><img src="static/images/shouyi.png" alt="">我的收益</li>
                 <li><img src="static/images/huanbang.png" alt="">换绑手机号</li>
-                <li><img src="static/images/fenzu.png" alt="">申请退款</li>
+                <li><img src="static/images/wode.png" alt="">我的铺机</li>
             </ul>
         </section>
         <section class="upgrade">
@@ -67,15 +63,77 @@
                 </section>
             </section>
         </section>
+        <section class="mask">
+            <div class="maskBox">
+                <div class="mask_close"><img src="./static/images/close.png" alt=""></div>
+                <div style="clear:both"></div>
+                <div class="mask_box"><img src="./static/images/gxcy.jpg" alt=""></div>
+                <div class="mask_text">邀请好友扫描您的二维码注册成为用户， 可成为您的下级</div>
+            </div>
+        </section>
     </section>
     <style type="text/css" media="screen">
     .top {
         width: 7.50rem;
-        height: 6.26rem;
-        background: url("./static/images/bgtop.png") no-repeat;
+        height: 4.26rem;
+        background: url("./static/images/bg.png") no-repeat;
         background-size: 100%;
         background-position: 0% 0%;
         position: relative;
+    }
+
+    .top .QRcode {
+        width: 1.7rem;
+        height: 1.7rem;
+        background: url(./static/images/QRcode.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 0.425rem;
+        left: .5rem;
+    }
+
+    .mask {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 70%;
+    }
+
+    .maskBox {
+        width: 5.2rem;
+        height: 5.6rem;
+        background-color: #fff;
+        margin: 2rem auto;
+        border-radius: 0.1rem;
+        padding: 0.2rem;
+        position: relative;
+    }
+    .mask_close {
+        width: 0.5rem;
+        height: 0.5rem;
+        float: right;
+    }
+    .mask_box {
+        width: 2.8rem;
+        height: 2.8rem;
+        margin: 0.2rem auto;
+    }
+
+    .mask_close img,
+    .mask_box img {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    .mask_text{
+        width:94%;
+        height: auto;
+        position: absolute;
+        left: 0.2rem;
+        bottom:0.2rem;
     }
 
     .top .label {
@@ -167,7 +225,7 @@
         display: flex;
         justify-content: space-around;
         position: absolute;
-        top: 5.1rem;
+        top: 3.5rem;
         left: 0;
     }
 
@@ -443,7 +501,7 @@
                                 window.location.href = "./Changetel.html"
                                 break;
                             case 3:
-                                window.location.href = "./requestRefund.html"
+                                window.location.href = "./Mypaver.html"
                                 break;
                             default:
 

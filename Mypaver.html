@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>我的铺机</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="./static/css/base.css" rel="stylesheet">
+    <script src="./static/js/jquery.min.1.10.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <section class="hr"></section>
+    <section class="mypaver">
+        <div class="mypaver_cell">
+            <div class="cell_top">
+                <div class="user_name">铺机编号:商用版SDISDHI <span>开</span></div>
+                <div class="user_date">到期时间：2020-04-06 12:00</div>
+            </div>
+            <div class="btn">
+                <div>关闭铺机</div>
+                <div>续费</div>
+                <div>升级</div>
+            </div>
+        </div>
+        <div class="hr"></div>
+        <div class="mypaver_cell">
+            <div class="cell_top">
+                <div class="user_name">铺机编号:商用版SDISDHI <span>关</span></div>
+                <div class="user_date">到期时间：2020-04-06 12:00</div>
+            </div>
+            <div class="btn">
+                <div>关闭铺机</div>
+                <div>续费</div>
+                <div>升级</div>
+            </div>
+        </div>
+        <div class="hr"></div>
+    </section>
+    <style type="text/css" media="screen">
+    .hr {
+        width: 100%;
+        height: 0.2rem;
+        background: rgba(250, 250, 252, 1);
+    }
+	.{
+		width:auto;
+		height: auto;
+	}
+	.mypaver .mypaver_cell{
+		width:auto;
+		height: auto;
+		padding: 0.2rem;
+	}
+    .mypaver .btn {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.2rem;
+    }
+
+    .mypaver .btn div {
+        width: 1.8rem;
+        height: 0.56rem;
+        font-size: 0.3rem;
+        text-align: center;
+        line-height: 0.56rem;
+        color: #FFFFFF;
+        background-color: rgba(229, 186, 117, 1);
+        border-radius: 0.28rem
+    }
+	.mypaver .cell_top {
+		width: 100%;
+        height: auto;
+        line-height: 0.4rem;
+        border-bottom: 0.01rem solid #e5e5e5;
+	}
+    .mypaver .cell_top .user_name {
+        width: 100%;
+        height: auto;
+        margin-top: 0.17rem;
+        margin-bottom: 0.29rem;
+        font-size: 0.32rem;
+        color:#333;
+    }
+
+    .mypaver .cell_top .user_name span {
+        display: inline-block;
+        width: 0.8rem;
+        height: 0.36rem;
+        font-size: 0.24rem;
+        text-align: center;
+        line-height: 0.36rem;
+        margin-left: 0.08rem;
+        color: #FFFFFF;
+        background-color: rgba(229, 186, 117, 1);
+        border-radius: 0.18rem;
+    }
+
+    .mypaver .cell_top .user_date {
+        width: 100%;
+        height: auto;
+        font-size: 0.22rem;
+		color : #999999;
+    }
+    </style>
+</body>
+
+</html>
